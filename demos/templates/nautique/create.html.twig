@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+{% if editMode %}
+<h1> Modifier la base ! </h1>
+{% else %}
+<h1> Créer une nouvelle base ! </h1>
+
+{% endif %}
+
+
+
+
+{{ form_start(formBase) }}
+
+
+<div class = "form-group">
+
+<label for =""> Nom </label>
+{{form_widget(formBase.name)}}
+
+
+</div>
+
+<div class = "form-group">
+
+<label for =""> Description </label>
+{{form_widget(formBase.description)}}
+
+
+</div>
+
+
+<div class = "form-group">
+
+<label for =""> Adresse </label>
+{{form_widget(formBase.adresse)}}
+
+
+</div>
+
+
+<div class = "form-group">
+
+<label for =""> Ville </label>
+{{form_widget(formBase.city)}}
+
+
+</div>
+
+
+<div class = "form-group">
+
+<label for =""> Code Postal </label>
+{{form_widget(formBase.code_postal)}}
+
+
+</div>
+
+
+<button type ="submit" class ="btn btn-success"> 
+{% if editMode %}
+Changer le contenu de la base
+{% else %}
+Ajouter la base 
+{% endif %}
+
+</button>
+{{ form_end(formBase) }}
+
+
+
+
+
+
+{% endblock %}

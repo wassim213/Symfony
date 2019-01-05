@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Salut {{ controller_name }}!{% endblock %}
+
+{% block body %}
+<section classe ="base">
+
+{% for base in bases %}
+<base>
+    <h4> {{base.name}} </h4>
+    <div class ="metadata"> {{base.description}} </div>
+    <div class ="content">
+       <a href ="{{ path('nautique_show', {'id':base.id}) }}" class="btn btn-danger">lire le détail </a>
+
+    </div>
+    </base>
+{% endfor %}
+
+</section>
+
+{% endblock %}
